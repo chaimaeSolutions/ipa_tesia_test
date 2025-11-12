@@ -6,6 +6,4 @@ use_frameworks!
 use_modular_headers!
 
 target 'Runner' do
-  # Pods for Runner
-  pod 'Flutter', :path => '../Flutter'
 end
