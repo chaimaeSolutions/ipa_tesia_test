@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "229235939623",
+    "project_id": "fir-b4c91",
+    "storage_bucket": "fir-b4c91.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229235939623:android:ed4b4a415036efab08b102",
+        "android_client_info": {
+          "package_name": "com.tesia.moldDetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229235939623-li9toppvn5lfsv5nl4on29065isf4jvl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tesia.moldDetection",
+            "certificate_hash": "392c4a161d5b3445260c6bef4ac89220e47449a3"
+          }
+        },
+        {
+          "client_id": "229235939623-nvfelsk5755ucnmbd5h7pc1ho3cl1p6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCICVYkB3gMQ1AlJ3J1wl1qA4hWF7Lj0DI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229235939623-nvfelsk5755ucnmbd5h7pc1ho3cl1p6t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "229235939623-dap03skamb43j9idfndg0129hju4d6i9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tesia.moldDetection"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
