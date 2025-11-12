@@ -1,26 +1,19 @@
 workflows:
   ios-workflow:
-    name: iOS Build (Flutter)
+    name: Build iOS App
     environment:
       flutter: stable
       xcode: latest
-      cocoapods: default
     scripts:
-      - name: Clean project
+      - name: Prebuild
         script: |
+          rm -rf ios/Pods ios/Podfile.lock
           flutter clean
           flutter pub get
-      - name: Install iOS pods
-        script: |
           cd ios
-          rm -rf Pods Podfile.lock
-          pod deintegrate
-          pod setup
           pod repo update
           pod install
           cd ..
-      - name: Build iOS (no code signing)
+      - name: Build iOS
         script: |
           flutter build ios --release --no-codesign
-    artifacts:
-      - build/ios/iphoneos/Runner.app
