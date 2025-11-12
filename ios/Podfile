@@ -6,3 +6,15 @@ use_modular_headers!
 target 'Runner' do
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
+# ios/Podfile
+
+platform :ios, '15.0'
+
+use_frameworks!
+use_modular_headers!
+
+target 'Runner' do
+  # Pods for Runner
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+end
