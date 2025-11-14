@@ -7,7 +7,7 @@ workflows:
       ios_signing:
         distribution_type: app_store        # App Store / TestFlight
         bundle_identifier: com.tesia.moldDetection
-    groups:
+      groups:
         - api_key 
     scripts:
       - name: Clean old iOS setup
