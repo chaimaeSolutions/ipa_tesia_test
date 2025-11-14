@@ -6,7 +6,6 @@ workflows:
       xcode: latest
       ios_signing:
         distribution_type: app_store      # For TestFlight
-        automatic_signing: true           # <-- ENABLE automatic signing
         bundle_identifier: com.tesia.moldDetection
     scripts:
       - name: Clean old iOS setup
