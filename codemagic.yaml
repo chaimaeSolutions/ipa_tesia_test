@@ -5,7 +5,7 @@ workflows:
       flutter: stable
       xcode: latest
       ios_signing:
-        distribution_type: app-store      # For TestFlight
+        distribution_type: app_store      # For TestFlight
         bundle_identifier: com.tesia.moldDetection # <-- PUT YOUR APP BUNDLE ID HERE
     scripts:
       - name: Clean old iOS setup
