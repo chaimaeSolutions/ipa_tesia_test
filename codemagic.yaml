@@ -1,11 +1,11 @@
 workflows:
   ios-rebuild:
-    name: iOS Build (with Podfile regeneration + IPA export)
+    name: iOS Build (Podfile regeneration + IPA export)
     environment:
       flutter: stable
       xcode: latest
       ios_signing:
-        distribution_type: app_store      # For TestFlight
+        distribution_type: app_store
         bundle_identifier: com.tesia.moldDetection
     scripts:
       - name: Clean old iOS setup
@@ -14,13 +14,16 @@ workflows:
           flutter clean
           flutter pub get
 
-      - name: Recreate Podfile
+      - name: Install Pods
         script: |
-          flutter build ios --release --no-codesign || true
+          cd ios
+          pod install
+          cd ..
 
       - name: Build IPA (App Store)
         script: |
-          flutter build ipa --release \
+          flutter build ipa \
+            --release \
             --export-options-plist=ios/exportOptions.plist
 
     artifacts:
