@@ -1,11 +1,11 @@
 workflows:
   ios-rebuild:
-    name: iOS Build (Podfile regeneration + IPA export)
+    name: iOS Build (Podfile regeneration + IPA export for TestFlight)
     environment:
       flutter: stable
       xcode: latest
       ios_signing:
-        distribution_type: app_store
+        distribution_type: app_store        # App Store / TestFlight
         bundle_identifier: com.tesia.moldDetection
     scripts:
       - name: Clean old iOS setup
@@ -14,13 +14,13 @@ workflows:
           flutter clean
           flutter pub get
 
-      - name: Install Pods
+      - name: Install CocoaPods dependencies
         script: |
           cd ios
-          pod install
+          pod install --repo-update
           cd ..
 
-      - name: Build IPA (App Store)
+      - name: Build IPA for App Store / TestFlight
         script: |
           flutter build ipa \
             --release \
