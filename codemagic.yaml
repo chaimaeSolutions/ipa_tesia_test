@@ -4,11 +4,11 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
+      groups:
+        - api_key
       ios_signing:
         distribution_type: app_store        # App Store / TestFlight
-        bundle_identifier: com.tesia.moldDetection
-      groups:
-        - api_key 
+        bundle_identifier: com.tesia.moldDetection 
     scripts:
       - name: Clean old iOS setup
         script: |
