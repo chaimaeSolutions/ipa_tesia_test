@@ -22,11 +22,17 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = MobileScannerController(
-      detectionSpeed: DetectionSpeed.normal,
-      facing: CameraFacing.back,
-      torchEnabled: false,
-    );
+
+    // Delay controller creation
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _controller = MobileScannerController(
+          detectionSpeed: DetectionSpeed.normal,
+          facing: CameraFacing.back,
+          torchEnabled: false,
+        );
+      });
+    });
   }
 
   @override
@@ -103,7 +109,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
       ),
       body: Stack(
         children: [
-          MobileScanner(controller: _controller, onDetect: _onDetect),
+          _controller == null? Center(child: CircularProgressIndicator()):MobileScanner(controller: _controller, onDetect: _onDetect),
           CustomPaint(painter: ScannerOverlay(), child: Container()),
           Positioned(
             bottom: 40,
