@@ -5,7 +5,7 @@ workflows:
       flutter: stable
       xcode: latest
       groups:
-        - api_key
+        - APIKEY
       ios_signing:
         distribution_type: app_store        # App Store / TestFlight
         bundle_identifier: com.tesia.moldDetection 
